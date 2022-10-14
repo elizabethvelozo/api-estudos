@@ -1,18 +1,8 @@
-# 🌐 Cliente Pokeapi
+# ⚙️ API Estudos
 
-## 👩🏽‍💻 Objetivo 1: 
+Repositório dedicado a armazenar meus estudos e registrar meu progresso com relação ao conceito de API utilizando a [PokeAPI](https://pokeapi.co/).
 
-Fazer consumo da [Pokeapi](https://pokeapi.co/) em Python 
-puro. 
-
-🔗 [Para testar clique aqui](https://replit.com/@elizabethvelozo/cliente-pokeapi).
+🔗 [Para testar os códigos clique aqui](https://replit.com/@elizabethvelozo?path=folder/mm_estagio_tarefas)
 (PS.: Clique em `▶️ Run` no Replit)
 
-
-### 🌌 Fluxo
-
-- 1. Solicitar informação do usuário;
-- 2. Criar as variáveis para armanezar essa informação;
-- 3. Consultar a PokeApi passando a variável;
-- 4. Tratar o retorno da API para extrair a informação desejada;
-- 5. Exibir ao usuário.
+📑 [Leia sobre meu progresso](https://github.com/elizabethvelozo/cliente-pokeapi/blob/main/my_progress.md)
