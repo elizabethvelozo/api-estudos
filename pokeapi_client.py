@@ -9,13 +9,21 @@ class PokeAPIClient:
     def get_pokemon(self, name):
         ''' Busca um pokémon por meio de uma requisição HTTP,
             retornando um modelo limpo. '''
-        response = requests.get(BASE_URL+name)
+        try:
+            response = requests.get(BASE_URL+name)
 
-        if response.status_code != 200:
-            return
+            response.raise_for_status()
+        
+            response = response.json()
+            types = [type['type']['name'] for type in response['types']]
+            pokemon = Pokemon(response['id'], response['name'], types)
 
-        response = response.json()
-        types = [type['type']['name'] for type in response['types']]
-        pokemon = Pokemon(response['id'], response['name'], types)
-
-        return pokemon
+            return pokemon
+        except requests.exceptions.HTTPError as error:
+            print (' Erro de HTTP:', error)
+        except requests.exceptions.ConnectionError as error:
+            print (' Erro de conexão:', error)
+        except requests.exceptions.Timeout as error:
+            print (' Tempo excedido:', error)
+        except requests.exceptions.RequestException as error:
+            print (' Algo deu errado:', error)
